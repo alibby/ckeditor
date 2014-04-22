@@ -1,4 +1,5 @@
 class Ckeditor::PicturesController < Ckeditor::ApplicationController
+  skip_before_filter :ensure_proper_protocol
 
   def index
     @pictures = Ckeditor.picture_model.find_all(ckeditor_pictures_scope)
